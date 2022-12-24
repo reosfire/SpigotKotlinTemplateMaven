@@ -24,7 +24,9 @@
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.2.4</version>
                 <configuration>
-                    <finalName>${project.name}</finalName>
+                    <outputFile>${directory}\${project.name}-${project.version}.jar</outputFile>
+                    <minimizeJar>true</minimizeJar>
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
                     <filters>
                         <filter>
                             <artifact>org.jetbrains*:*</artifact>
@@ -33,7 +35,6 @@
                             </excludes>
                         </filter>
                     </filters>
-                    <minimizeJar>true</minimizeJar>
                 </configuration>
                 <executions>
                     <execution>
@@ -108,7 +109,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.14.4-R0.1-SNAPSHOT</version>
+            <version>1.19.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
